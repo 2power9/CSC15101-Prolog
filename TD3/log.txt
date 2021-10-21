@@ -1,0 +1,185 @@
+%==== ex02 ====%
+% use `consult` command
+?- parent_de(Parent, Enfant).
+Parent = paul,
+Enfant = christine ;
+Parent = paul,
+Enfant = sylvain ;
+Parent = mathias,
+Enfant = catherine ;
+Parent = albert,
+Enfant = francois ;
+Parent = sylvain,
+Enfant = nathalie ;
+Parent = helene,
+Enfant = christine ;
+Parent = helene,
+Enfant = sylvain ;
+Parent = sylvie,
+Enfant = catherine ;
+Parent = christine,
+Enfant = francois ;
+Parent = catherine,
+Enfant = nathalie.
+
+?- enfant_de(Enfant, Parent).
+Enfant = christine,
+Parent = paul ;
+Enfant = sylvain,
+Parent = paul ;
+Enfant = catherine,
+Parent = mathias ;
+Enfant = francois,
+Parent = albert ;
+Enfant = nathalie,
+Parent = sylvain ;
+Enfant = christine,
+Parent = helene ;
+Enfant = sylvain,
+Parent = helene ;
+Enfant = catherine,
+Parent = sylvie ;
+Enfant = francois,
+Parent = christine ;
+Enfant = nathalie,
+Parent = catherine.
+
+?- grand_mere_de(GrandMere, Enfant).
+GrandMere = helene,
+Enfant = francois ;
+GrandMere = helene,
+Enfant = nathalie ;
+GrandMere = sylvie,
+Enfant = nathalie ;
+false.
+
+?- grand_pere_de(GrandPere, Enfant).
+GrandPere = paul,
+Enfant = francois ;
+GrandPere = paul,
+Enfant = nathalie ;
+GrandPere = mathias,
+Enfant = nathalie ;
+false.
+
+?- mari_de(Male, Femelle).
+Male = paul,
+Femelle = helene ;
+Male = paul,
+Femelle = helene ;
+Male = mathias,
+Femelle = sylvie ;
+Male = albert,
+Femelle = christine ;
+Male = sylvain,
+Femelle = catherine.
+
+?- femme_de(Femelle, Male).
+Femelle = helene,
+Male = paul ;
+Femelle = helene,
+Male = paul ;
+Femelle = sylvie,
+Male = mathias ;
+Femelle = christine,
+Male = albert ;
+Femelle = catherine,
+Male = sylvain.
+
+%==== ex03 ====%
+a.
+?- mammiferes(X).
+X = tiger ;
+X = hyena ;
+X = lion ;
+X = zebra.
+
+b.
+?- carnivores_sont_mammiferes(X).
+X = tiger ;
+X = hyena ;
+X = lion ;
+false.
+
+c.
+?- mammiferes_ont_rayures(X).
+X = tiger ;
+X = zebra.
+
+d.
+?- reptile_a_criniere(X).
+false.
+
+%==== ex04 ====%
+?- couple(Male, Femelle).
+Male = bill,
+Femelle = carol ;
+Male = bill,
+Femelle = margaret ;
+Male = bill,
+Femelle = jane ;
+Male = george,
+Femelle = carol ;
+Male = george,
+Femelle = margaret ;
+Male = george,
+Femelle = jane ;
+Male = alfred,
+Femelle = carol ;
+Male = alfred,
+Femelle = margaret ;
+Male = alfred,
+Femelle = jane.
+
+%==== ex05 ====%
+a.
+?- male(Prenom, Nom).
+Prenom = fred,
+Nom = jones ;
+Prenom = paul,
+Nom = smith ;
+Prenom = martin,
+Nom = williams ;
+Prenom = martin,
+Nom = johnson.
+
+b.
+?- femelle(Prenom, Nom).
+Prenom = frances,
+Nom = wilson ;
+Prenom = mary,
+Nom = jones.
+
+c.
+?- prenom_martin(Nom).
+Nom = williams ;
+Nom = johnson.
+
+d.
+?- docteur(Prenom, Nom).
+Prenom = fred,
+Nom = jones.
+
+e.
+?- programmeur(Prenom, Nom).
+Prenom = mary,
+Nom = jones.
+
+f.
+?- chemiste(Prenom, Nom).    
+Prenom = martin,
+Nom = williams.
+
+g.
+?- plus_jeune_45(Prenom, Nom).
+Prenom = frances,
+Nom = wilson ;
+Prenom = martin,
+Nom = williams ;
+Prenom = mary,
+Nom = jones ;
+false.
+
+h.
+?- chemiste_entre_30_et_60(Prenom, Nom).
+false.
